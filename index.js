@@ -25,4 +25,4 @@ app.post('/subscription', (req, res) => {
     message = `Parabés ${nome}, sua inscrição foi realizada com sucesso! Um E-mail foi enviado para: ${email}`;
     res.redirect("/");
 });
-app.listen(3000, () => console.log(`Servidor rodando em http://localhost:${port}`));//ouvindo a porta 3000, rodando nessa porta
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));//ouvindo a porta 3000, rodando nessa porta
