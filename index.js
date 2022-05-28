@@ -1,7 +1,10 @@
+require("dotenv").config();
 let message = "";
+
 const express = require('express');//cria variável express, o require vai na pasta node modules procura a pasta express e traz tudo que ela tem ali dentro
 const path = require("path");//importando uma lib do proprio express chamada path
 const app = express();//cria a const app que é a aplicação e chama todas as funções do express atrasvés desse app
+const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded());
 
@@ -22,4 +25,4 @@ app.post('/subscription', (req, res) => {
     message = `Parabés ${nome}, sua inscrição foi realizada com sucesso! Um E-mail foi enviado para: ${email}`;
     res.redirect("/");
 });
-app.listen(3000, () => console.log("Servidor rodando em http://localhost:3000"));//ouvindo a porta 3000, rodando nessa porta
+app.listen(3000, () => console.log(`Servidor rodando em http://localhost:${port}`));//ouvindo a porta 3000, rodando nessa porta
