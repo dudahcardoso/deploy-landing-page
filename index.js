@@ -21,7 +21,7 @@ app.get('/', (req, res) => {//chamando a rota get, dentro do servidor que tem as
 });
 
 app.post('/subscription', (req, res) => {
-    const {nome, email} = req.body;
+    const {nome, email} = req.body;//desconstrução do objeto para receber os dados que chegam do body da nossa requisição, sim os dados do formulário chegam através desse atributo body, que pertence ao objeto req da requisição
     message = `Parabés ${nome}, sua inscrição foi realizada com sucesso! Um E-mail foi enviado para: ${email}`;
     res.redirect("/");
 });
